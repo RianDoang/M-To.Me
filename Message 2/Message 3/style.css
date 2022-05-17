@@ -1,0 +1,252 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: #141a34;
+  align-items: center;
+  justify-content: center;
+}
+
+.useful-links{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+
+}
+.useful-links a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.container form{
+  width: 90%;
+  max-width: 600px;
+  padding: 50px 30px 20px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+/*.fa-paper-plane{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff;
+  font-size: 26px;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}*/
+
+.input-group{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+.input-group label{
+  flex-basis: 28%;
+}
+.input-group input, .input-group textarea{
+  flex-basis: 68%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #999;
+  color: #333;
+  font-size: 16px;
+}
+
+::placeholder{
+  font-size: 14px;
+}
+
+form button{
+  /* background: #141a34; */
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 7px 49px;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 10px
+}
+
+#Header h1 {
+  position: relative;
+  text-align: center;
+  top: -1pc;
+  font-family: sans-serif;
+}
+
+.input-group span {
+  position: absolute;
+  bottom: 12px;
+  right: 17px;
+  font-size: 14px;
+  color: red;
+}
+
+#subit_error {
+  color: red;
+}
+
+.input-group span i {
+  color: seagreen;
+}
+
+.alert {
+  position: relative;
+  text-align: center;
+  top: -1.5pc;
+}
+
+button#btn-close.btn-close {
+  margin: 15px 20px;
+  padding: 5px;
+}
+
+button.btn-loading {
+  /* margin: 20px 252.600px 10px;
+  padding: 7px 21px; */
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 7px 24px;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto 10px
+}
+
+footer {
+  background: #111;
+  height: auto;
+  width: 100vw;
+  font-family: "Open Sans";
+  padding-top: 40px;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem
+}
+
+.footer-content p {
+  max-width: 700px;
+  margin: 5px 20px 0 20px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 2rem -2.1rem;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.6rem;
+  transition: color .4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+@media (max-width: 390px) {
+  .input-group span {
+    position: absolute;
+    bottom: 2px;
+    right: 17px;
+    font-size: 13px;
+    color: red;
+  }
+
+  .input-group input, .input-group textarea{
+    flex-basis: 68%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 100px 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 2rem -3rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .input-group span {
+    position: absolute;
+    bottom: 2px;
+    right: 17px;
+    font-size: 13px;
+    color: red;
+  }
+
+  .input-group input, .input-group textarea{
+    flex-basis: 68%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .socials {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 2rem -2rem;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Last Yaww ;)</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+   <!-- Fontawesome -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <form name="contact-form-me">
+      <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+        <strong>Terimakasih!</strong> Pesan Kamu Sudah Aku Terima.
+        <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div id="Header">
+        <h1>Last Page!</h1>
+      </div>
+      <div class="input-group">
+        
+        <label>Nama</label>
+        <input type="text" name="nama" placeholder="Masukkan Nama Lengkap" id="contact-name" onkeyup="validateName()">
+        <span id="nama_error"></span>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Masukkan Email" id="contact-email" onkeyup="validateEmail()">
+        <span id="email_error"></span>
+      </div>
+
+      <div class="input-group">
+        <label>Pesan</label>
+        <textarea rows="5" name="pesan" placeholder="Masukkan Pesanmu Disini" id="contact-pesan" onkeyup="validatePesan()"></textarea>
+        <span id="pesan_error"></span>
+      </div>
+
+    <button class="btn-kirim btn-dark" type="submit"onclick="return validateForm()">Kirim</button>
+      <span id="subit_error"></span>
+    <button class="btn btn-dark d-none btn-loading" type="button" disabled>
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>    
+  </form>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <h3>Contact Me</h3>
+      <p>Mungkin Kamu berubah pikiran, jadi kalo ada apa apa bisa contact gua, link ada dibawah okey.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/me/"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="https://wa.me/62881025058443?text=Welkombek%20to%20my%20gays!"><i class="bi bi-whatsapp"></i></i></a></li>
+        <li><a href="https://www.instagram.com/rynsyy_/"><i class="bi bi-instagram"></i></a></li>
+        <li><a href="https://t.me/nYohhK"><i class="bi bi-telegram"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- JS -->
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzcd9lYKPo32wCQiTAC7CAPi4lu2Un3rNuXPHfHWRuWdR1QCTiKxmIs2gyvxrRI0EF6yw/exec'
+    const form = document.forms['contact-form-me']
+    const btnKirim = document.querySelector('.btn-kirim');
+    const btnLoading = document.querySelector('.btn-loading');
+    const myAlert = document.querySelector('.my-alert');
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btnLoading.classList.toggle('d-none');
+      btnKirim.classList.toggle('d-none');
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          btnLoading.classList.toggle('d-none');
+          btnKirim.classList.toggle('d-none');
+          myAlert.classList.toggle('d-none');
+          form.reset();
+          console.log('Success!', response)
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
